@@ -1,52 +1,97 @@
-* {
+* { /* Define aparência padrão */
     margin: 0;
     padding: 0;
-    width: 100%;
     box-sizing: border-box;
 }
 
-body {
-    overflow-x: hidden;
-    font-family: Arial, Sans-Serif;
-    color: #1a1a1a;
+body { /* Aparência do corpo da página */
+    overflow-x: hidden; /* Oculta itens que vazam para fora da página no eixo horizontal */
+    font-family: Arial, Sans-Serif; /* Fonte e família dos textos da página*/
+    color: #1a1a1a; /* Cor dos textos */
 }
 
-main {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
+main { /* Parâmetros da seção principal do site */
+    position: relative; /* Define posição sem tirar o elemento do fluxo natuarl do documento */
+    width: 100%; /* Ocupa a extensão horizontal total da página */
+    min-height: 100vh; /* Define altura mínima do elemento */
+    overflow-x: hidden; /* Oculta parâmetros que "vazam" para fora, no sentido horizontal */
 }
 
-.imagem-fundo {
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    z-index: 0;
+.imagem-fundo { /* Determina comportamento da imagem de fundo da página */
+    position: absolute; /* Faz com que a imagem saia do fluxo normal do HTML, deixando-a nao fundo */
+    width: 100%; /* Ocupa 100% da extensão horizontal da página */
+    object-fit: cover; /* Espalha a imagem pela extensão do contêiner */
+    display: block; /* Renderiza um componente como um bloco na página */
+    z-index: 0; /* Coloca a imagem para "trás" dos outros elementos */
 }
 
-.camada-nevoa {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
+.camada-nevoa { /* Define comporamento de "névoa" sobre a imagem de fundo */
+    position: fixed; /* Utiliza a divisão "main" como âncora para seu posicionamento */
+    inset: 0; /* Define todas as coordenadas (top, left, bottom, right) como 0, espalhando o elemento */
+    z-index: 1; /* Coloca a camada sobre a imagem */
 
-    background: linear-gradient(
+    background: linear-gradient( /* Define o gradiente que compõe a "névoa" */
         to bottom,
-        rgba(255, 255, 255, 0.65) 0%,
-        rgba(255, 255, 255, 0.85) 50%,
+        rgba(255, 255, 255, 0.70) 0%,
+        rgba(255, 255, 255, 0.88) 50%,
         rgba(255, 255, 255, 0.98) 100%
     );
 
     backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); /* Adiciona um blur à imagem abaixo, para auxiliar ao contraste*/
+    pointer-events: none; /* Permite cliques nos links abaixo da camada */
 }
 
-.conteudo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    color: #222;
+.painel-principal {
+    position: relative; /* Utiliza a divisão "main" como âncora para seu posicionamento */
+    z-index: 2; /* Coloca a divisão sobre a imagem a "névoa" */
+    max-width: 100%; /* Expande a divisão a até 80% da tela */
+    margin: 0 auto; /* Define espaçamento superior e inferior como 0, e horizontal centralizado*/
+    padding: 3rem 1.5rem 4rem; /* Adiciona espaçamento interno, na ordem topo, direita/esquerda, e inferior */
+    display: flex; /* Ativa o Flexbox, alinhando elementos internos automaticamente*/
+    flex-direction: column; /* Define a direção em que os elementos filhos serão alinhados*/
+    align-items: center; /* Define alinhamento de elementos */
+    text-align: center; /* Define alinhamento de texto */
+}
+
+.texto-pagina {
+    color: #222; /* Define cor do texto na divisão */
+}
+
+.texto-pagina h1 { /* Comportamento do título da página */
+    font-size: 2.5rem; /* Define o tamanho do título, em relação ao tamanho padrão da fonte */
+    margin-bottom: 0.5rem; /* Define margem abaixo do título */
+}
+
+.texto-pagina p { /* Comportamento do texto da página */
+    font-size: 1rem; /* Tamanho padrão para o texto */
+    margin-bottom: 1.5rem; /* Margem abaixo do texto */
+}
+
+.botoes-busca { /* Define o comportamento dos elementos dentro da divisão */
+    display: flex; /* Ativa o Flexbox, alinhando elementos internos automaticamente*/
+    flex-direction: column; /* Define a direção em que os elementos filhos serão alinhados*/
+    align-items: center; /* Define alinhamento de elementos */
+}
+
+.lista-pokemons { /* Define comportamento de lista de Pokémons */
+    display: flex; /* Ativa o Flexbox, alinhando elementos internos automaticamente*/
+    flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
+    justify-content: center; /* Define o alinhamento horizontal */
+    gap: 0.25rem; /* Adiciona um espaço entre os elementos */
+    margin-bottom: 1.5rem; /* Adiciona uma margem ao final do elemento */
+    min-height: 48px; /* Define altura mínima do elemento */
+}
+
+.pokemon-chip { /*  */
+    background: rgba(255, 255, 255, 0.85); /*  */
+    border: 1px solid rgba(0, 0, 0, 0.12); /*  */
+    border-radius: 20px; /*  */
+    padding: 4.45rem 0.9rem; /*  */
+    font-size: 0.8rem; /*  */
+    font-weight: 680; /*  */
+    text-transform: capitalize; /*  */
+    color: #333; /*  */
+    cursor: pointer; /*  */
+    transition: all 0.2s ease; /*  */
 }
