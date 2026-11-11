@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <header>
-        <title>Pokemon API!</title>
-        <link rel="stylesheet" href="style.css">
+<html lang="pt-BR"> <!-- Define o idioma da página -->
+    <header> <!-- Cabeçalho da página -->
+        <meta charset="UTF-8"> <!-- Define padrão de codificação de caracteres da página -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define parâmetros iniciais de exibição e adaptação do site a telas menores -->
+        <title>Pokédex API!</title> <!-- Título da página, exibido na aba do navegador -->
+        <link rel="stylesheet" href="style.css"> <!-- Define arquivo de estilização CSS do site -->
     </header>
 
-    <body>
-        <main>
-            <div id="entradas">
-                <img src="img/imagem-pokemon.jpg" alt="Pokémon" class="imagem-fundo">
+    <body> <!-- Corpo da página, exibido na tela -->
+        <main> <!-- Divisão principal da página -->
+            <img src="img/imagem-pokemon.jpg" alt="Pokémon" class="imagem-fundo"> <!-- Imagem de fundo da página -->
+            <div class="camada-nevoa"></div> <!-- "Névoa" sobre a imagem de fundo -->
 
-                <div class="camada-nevoa"></div>
+            <div class="painel-principal"> <!-- Painel principal, onde todas as informações da página serão colocadas -->
+                <div class="texto-pagina"> <!-- Divisão que conterá o conteúdo fixo da página -->
+                    <h1>Pokédex API!</h1>
+                    <p>Já se perguntou quais são as habilidades iniciais de algum dos 
+                        Pokémons da primeira geração? Ou quis saber qual é o tipo de 
+                        algum desses pokémons? Aqui você pode realizar essa consulta! 
+                    </p>
+                    <p>Esse site retorna algumas qualidades básicas de cada um dos 151 
+                        pokémons da primeira geração da franquia.
+                    </p>
+                </div>
+                
+                <div class="botoes-busca"> <!-- Divisão que conterá os ativos de interação com o usuário -->
+                    <div class="lista-pokemons" id="listaPokemons"></div> <!-- Divisão com a lista de pokémons, alimentado por script JavaScript -->
 
-                <div class="conteudo"></div>
-
-                <div class="card-holder" id="cardHolder"></div>
+                    <button id="btnBuscar" disabled>Buscar!</button> <!-- Botão de busca, que executará o script JavaScript -->
+                </div>
+                <div class="card-holder" id="cardHolder"></div> <!-- Divisão que conterá o card com as informações buscadas pelo script JavaScript-->
             </div>
         </main>
-        <script src="js/main.js"></script>
+        <script src="js/main.js"></script> <!-- Define a fonte dos scripts que serão executados na página-->
     </body>
 </html>
