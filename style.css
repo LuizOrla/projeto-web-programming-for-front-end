@@ -74,24 +74,62 @@ main { /* Parâmetros da seção principal do site */
     align-items: center; /* Define alinhamento de elementos */
 }
 
-.lista-pokemons { /* Define comportamento de lista de Pokémons */
-    display: flex; /* Ativa o Flexbox, alinhando elementos internos automaticamente*/
-    flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
-    justify-content: center; /* Define o alinhamento horizontal */
-    gap: 0.25rem; /* Adiciona um espaço entre os elementos */
-    margin-bottom: 1.5rem; /* Adiciona uma margem ao final do elemento */
-    min-height: 48px; /* Define altura mínima do elemento */
+#listaPokemons { /* Define comportamento da lista de Pokémons */
+    width: 180px;
+    height: 30px; /* Altura e largura fixas para o site aberto em navegador padrão */
+    padding: 0 1rem; /* Espaçamento interno */
+    font-size: 1.05rem; /* Tamanho da fonte da lista */
+    border-radius: 8px; /* Leve arredondamento das bordas */
+    text-align: center; /* Alinhamento central dos nomes */
+    text-align-last: center; /* Centralização dos nomes */
 }
 
-.pokemon-chip { /*  */
-    background: rgba(255, 255, 255, 0.85); /*  */
-    border: 1px solid rgba(0, 0, 0, 0.12); /*  */
-    border-radius: 20px; /*  */
-    padding: 4.45rem 0.9rem; /*  */
-    font-size: 0.8rem; /*  */
-    font-weight: 680; /*  */
-    text-transform: capitalize; /*  */
-    color: #333; /*  */
-    cursor: pointer; /*  */
-    transition: all 0.2s ease; /*  */
+#btnBuscar { /* Comportamento do botão de busca */
+    width: 180px;
+    height: 58px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(29, 107, 224);
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#btnBuscar:hover { /* Comportamento do botão ao passar o site por cima */
+    background-color: rgb(68, 133, 230); /* Altera levemente a cor do botão */
+}
+
+#cardHolder { /* Comportamento do local onde o card com as informações dos Pokemóns será colocado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: 1px solid black; /* Borda definida para visualização */
+
+    height: 60%; /* Altura depende da tela na qual o card será visualizado */
+    min-height: 600px; /* Altura mínima de 600px */
+    width: 80%; /* Largura de 80% da tela, até um mínimo de 400px */
+    min-width: 400px;
+}
+
+#card-pokemon { /* Formato do Card com as informações do Pokémon */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Mantém os itens alinhados ao centro do card em coluna */
+
+    padding: 10px;
+
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 350px;
+    width: 280px;
+}
+
+#imagem-card {
+    height: 200px;
+    width: 200px; /* Imagem com tamanho fixo e definido */
 }
