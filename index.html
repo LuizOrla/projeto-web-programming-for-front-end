@@ -17,17 +17,16 @@
                     <h1>Pokédex API!</h1>
                     <p>Já se perguntou quais são as habilidades iniciais de algum dos 
                         Pokémons da primeira geração? Ou quis saber qual é o tipo de 
-                        algum desses pokémons? Aqui você pode realizar essa consulta! 
-                    </p>
+                        algum desses pokémons? Aqui você pode realizar essa consulta! </p>
                     <p>Esse site retorna algumas qualidades básicas de cada um dos 151 
-                        pokémons da primeira geração da franquia.
-                    </p>
+                        pokémons da primeira geração da franquia.</p>
+                    <div id="texto-status"></div> <!-- Texto adicionado via JavaScript -->
                 </div>
                 
                 <div class="botoes-busca"> <!-- Divisão que conterá os ativos de interação com o usuário -->
-                    <div class="lista-pokemons" id="listaPokemons"></div> <!-- Divisão com a lista de pokémons, alimentado por script JavaScript -->
-
-                    <button id="btnBuscar" disabled>Buscar!</button> <!-- Botão de busca, que executará o script JavaScript -->
+                    
+                    <select id="listaPokemons" name="listaDePokemons"></select> <!-- Lista de Pokémons, adicionada pelo script JS-->
+                    <button id="btnBuscar">Buscar!</button> <!-- Botão de busca, que executará o script JavaScript -->
                 </div>
                 <div class="card-holder" id="cardHolder"></div> <!-- Divisão que conterá o card com as informações buscadas pelo script JavaScript-->
             </div>
